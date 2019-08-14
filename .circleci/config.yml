@@ -32,6 +32,7 @@ workflows:
   version: 2
   two_job_flow:
     jobs:
+      - build
       - job-1
       - job-2
 
