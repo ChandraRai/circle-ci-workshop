@@ -1,10 +1,32 @@
-version: 2
+version: 2.0
 jobs:
   job-1:
-     steps: 
+   docker:
+    - image: circleci/openjdk:8-jdk
 
-  job-2:
      steps:
+       - run:
+          name: The First Step
+          command: |
+            echo 'Hello World!'
+            echo 'This is the delivery pipeline'
+            
+          - checkout
+          - run:
+          command:
+            gradle test
+
+          - store_test_results:
+          path: test-results
+
+          - store_artifacts:
+          path: /code/artifact
+          destination: prefix
+
+          - run:
+          command:
+            gradle jar
+  job-2:
 
 workflows:
   version: 2
@@ -12,3 +34,4 @@ workflows:
     jobs:
       - job-1
       - job-2
+
