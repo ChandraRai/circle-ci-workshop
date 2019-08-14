@@ -1,9 +1,9 @@
+
 version: 2.0
 jobs:
   job-1:
-     build:
-       docker:
-          - image: circleci/openjdk:8-jdk
+    docker:
+        - image: circleci/openjdk:8-jdk
      steps:
        - run:
           name: The First Step
@@ -11,7 +11,6 @@ jobs:
             echo 'Hello World!'
             echo 'This is the delivery pipeline'
       - checkout
-
       - run:
           command:
             gradle test
