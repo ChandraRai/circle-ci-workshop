@@ -1,28 +1,6 @@
 version: 2
 jobs:
   job-1:
-     steps:
-       - run:
-          name: The First Step
-          command: |
-            echo 'Hello World!'
-            echo 'This is the delivery pipeline'
-            
-          - checkout
-          - run:
-          command:
-            gradle test
-
-          - store_test_results:
-          path: test-results
-
-          - store_artifacts:
-          path: /code/artifact
-          destination: prefix
-
-          - run:
-          command:
-            gradle jar
   job-2:
 
 workflows:
