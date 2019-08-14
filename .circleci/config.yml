@@ -1,5 +1,6 @@
 version: 2.0
 jobs:
+ job-1:
   build:
     docker:
       - image: circleci/openjdk:8-jdk
@@ -26,3 +27,9 @@ jobs:
           command:
             gradle jar
 
+workflows:
+  version: 2
+  two_job_flow:
+    jobs:
+      - job-1
+      
