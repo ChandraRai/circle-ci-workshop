@@ -1,7 +1,10 @@
 version: 2
 jobs:
   job-1:
+     steps: 
+
   job-2:
+     steps:
 
 workflows:
   version: 2
