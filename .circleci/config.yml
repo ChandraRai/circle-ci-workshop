@@ -1,11 +1,11 @@
 version: 2.0
 jobs:
- job-1:
-  build:
-    docker:
-      - image: circleci/openjdk:8-jdk
-    steps:
-      - run:
+  job-1:
+     build:
+       docker:
+          - image: circleci/openjdk:8-jdk
+     steps:
+       - run:
           name: The First Step
           command: |
             echo 'Hello World!'
@@ -27,9 +27,12 @@ jobs:
           command:
             gradle jar
 
+
+  job-2:
+
 workflows:
   version: 2
   two_job_flow:
     jobs:
       - job-1
-      
+      - job-2
