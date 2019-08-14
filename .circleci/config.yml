@@ -1,8 +1,6 @@
 version: 2
 jobs:
   job-1:
-   docker:
-     - image: circleci/openjdk:8-jdk
      steps:
        - run:
           name: The First Step
