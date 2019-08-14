@@ -1,7 +1,7 @@
-
 version: 2.0
 jobs:
   job-1:
+   build:
     docker:
         - image: circleci/openjdk:8-jdk
      steps:
